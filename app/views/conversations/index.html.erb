@@ -1,0 +1,70 @@
+<div class="container">
+<div class="row">
+<h2 class="ui center aligned icon header">
+  <i style="color:white;" class="mail outline icon"></i>
+  <center><h2 style="color:white">Inbox</h2></center>
+</h2>
+</div>
+<br>
+<br>
+<div class="row">
+<div class="col-md-4 col-md-offset-2">
+  <h4>Conversations</h4>
+  <div class="ui celled list">
+    <% @conversations.each do |conversation| %>
+     <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+      <% if conversation.sender_id == current_user.id %>
+        <% recipient = User.find(conversation.recipient_id) %>
+      <% else %>
+        <% recipient = User.find(conversation.sender_id) %>
+      <% end %>
+      <div class="item">
+        <i style="color:white;, display:inline-block;" class="talk icon"></i>
+        <div class="content">
+        <div class="header"><p><%= recipient.email %></p></div>
+        <%= link_to conversation_messages_path(conversation) do %>
+        <div class="ui button">Open Conversation
+          (<%= conversation.find_unread_messages(current_user) %> unread)
+        </div>
+        <% end %>
+        </div>
+      </div>
+      <br>
+     <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-4 col-md-offset-2">
+  <div class="ui category search">
+    <div class="ui icon input">
+    <%= form_tag('/conversations', :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Users...", :class => "prompt" %>
+        <i class="inverted search icon"></i>
+    </div>
+  </div>
+    <% end %>
+  <% if @users.blank? %>
+    <small>There are no queries containing the term <%= params[:search] %>.</small>
+  <% end %>
+  <br>
+  <h4>All Users</h4>
+    <div class="ui celled list">
+     <% @users.each do |user| %>
+      <% if user.id != current_user.id %>
+      <div class="item">
+        <i class="call icon"></i>
+        <div class="content">
+          <div class="header"><p><%= user.email %></p></div>
+          <div class="ui button"><%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: "post"%></div>
+        </div>
+      </div>
+        <br>
+    <% end %>
+   <% end %>
+</div>
+</div>
+<div class="col-md-1">
+</div>
+</div>
+</div>

@@ -1,0 +1,70 @@
+<div class="container">
+<div class="row">
+<h2 class="ui center aligned icon header">
+  <i style="color:white;" class="user icon"></i>
+  <center><h2 style="color:white"><%= @profile.tutor %></h2></center>
+</h2>
+</div>
+<center>
+<%= image_tag @profile.avatar.url(:thumb) %>
+</center>
+<br>
+  <div class="row">
+    <table class="ui inverted grey table">
+      <thead>
+        <th>Online</th>
+        <th>Skype ID</th>
+        <th>Hourly Rate (HKD)</th>
+        <th>Full-time/Part-time</th>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td> <% if @profile.online %>
+                Yes
+               <% else %>
+                No
+               <% end %> </td>
+          <td> <%= @profile.skype %> </td>
+          <td> <%= @profile.rate %> </td>
+          <td> <%= @profile.nature %> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <div class="row">
+    <table class="ui inverted grey table">
+      <thead>
+        <tr>
+          <th>Teaching</th>
+          <th>Learning</th>
+          <th>Gender</th>
+          <th>Teaching Regions</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <%= @profile.teaching %></td>
+          <td> <%= @profile.learning %></td>
+          <td> <% if @profile.is_male %>
+                Male
+               <% else %>
+                Female
+               <% end %> </td>
+          <td> <%= @profile.teaching_regions %></td>
+          <td> <%= @profile.email %> </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br><br>
+    <a href="/users/edit"><button class="ui yellow button"><p>Change Password</p></button></a>
+    <a href="/profiles/edit"><button class="ui blue button"><p>Edit Profile</p></button></a>
+
+</div>
+
+<br>
+<br>
+<br>

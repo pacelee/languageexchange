@@ -1,0 +1,65 @@
+<%= bootstrap_form_for(profile) do |f| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :tutor, label: "Full Name" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :teaching, label: "Languages You Teach" %>
+  </div>
+
+  <div class="field">
+    <%= f.select :is_male, [["Male", true], ["Female", false]], { label: "Choose Your Gender:" }, { class: "selectpicker" } %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :teaching_regions, label: "Teaching Regions" %>
+  </div>
+
+  <div class="field">
+    <%= f.select :online, [["Yes", true], ["No", false]], { label: "Willing to Teach and Learn Online:" }, { class: "selectpicker" } %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :skype, label: "Skype ID" %>
+  </div>
+
+  <div class="field">
+    <%= f.number_field :rate, label: "Hourly Rate (For Tutors Only)" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :nature, label: "Full-time/Part-time" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :learning, label: "Languages You Want to Learn" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field_tag 'profile[user_id]', current_user.id  %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email, label: "Please Confirm Your Email"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

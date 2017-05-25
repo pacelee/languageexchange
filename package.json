@@ -1,0 +1,16 @@
+{
+  "name": "languageexchange",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "modernizr": "3.5.0",
+    "semantic-ui": "^2.2.10"
+  },
+  "devDependencies": {}
+}

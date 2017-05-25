@@ -1,0 +1,89 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.allButFooter {
+    min-height: calc(100vh - 95px);
+}
+
+.alignment {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.rightalign {
+  text-align: right;
+
+}
+
+.grey {
+  background-color:#303030;
+}
+
+.bpad {
+  padding-bottom: 30px;
+}
+
+.fa-users, .fa-line-chart, .fa-cubes, .fa-check-square-o, .fa-handshake-o, .fa-binoculars {
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+}
+.fa-laptop {
+  font-size: 260px;
+}
+
+.earthborder {
+  border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border: 3px solid #FFFFFF;
+}
+
+h1, h2 {
+font-family: 'Oswald', sans-serif;
+}
+
+h5, h4 {
+font-family: 'Oswald', sans-serif;
+display: inline-block;
+}
+.header {
+font-family: 'Oswald', sans-serif;
+}
+
+p {
+font-family: 'Quattrocento', serif;
+color:white;
+}
+
+.vertical-center {
+  min-height: 85%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 85vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}

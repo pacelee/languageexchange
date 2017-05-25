@@ -1,0 +1,34 @@
+{:uriI"“file://app/assets/tasks/config/admin/templates/bower.json?type=application/json&id=2c261efb75c56789df1f674d80ff49791229adccd430c066dcfefbb856d38b69:ET:load_pathI"app/assets/tasks;T:filenameI"7app/assets/tasks/config/admin/templates/bower.json;T:	nameI"!config/admin/templates/bower;T:logical_pathI"&config/admin/templates/bower.json;T:content_typeI"application/json;T:sourceI"İ{
+  "name"        : "Component",
+  "description" : "Component distribution",
+  "homepage"    : "http://www.semantic-ui.com",
+  "author": {
+    "name" : "Jack Lukic",
+    "web"  : "http://www.jacklukic.com"
+  },
+  "ignore": [
+    "./index.js"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license" : [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "ignore": [
+    "docs",
+    "node",
+    "server",
+    "spec",
+    "src",
+    "test"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash{
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Efile-digest://app/assets/tasks/config/admin/templates/bower.json;TT:charsetI"
+utf-8;F:digest"%DöM€ºâş?dƒi:ÿáªá$ºTi­i¦´:lengthiİ:dependencies_digest"%p¹…u†&× 2·éê<QÖ•‹À)Ä1Y¬0±©²càÍL:idI"E2c261efb75c56789df1f674d80ff49791229adccd430c066dcfefbb856d38b69;F:
+mtimel+B##Y

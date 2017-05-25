@@ -1,0 +1,40 @@
+<div class="col-md-6">
+
+  <%= form_for [@conversation, @message], html: {class: "ui form"} do |f| %>
+   <div class="field">
+     <%= f.text_area :body, class: "form-control" %>
+   </div>
+   <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+   <div>
+     <%= f.submit "Add Reply", class: "ui blue huge button" %>
+   </div>
+  <% end %>
+</div>
+
+<div class="col-md-6">
+<% if @over_ten %>
+ <%= link_to "Show Previous", "?m=all" %>
+<% end %>
+<div class="ui large feed">
+ <% @messages.each do |message| %>
+  <% if message.body %>
+   <% user = User.find(message.user_id) %>
+   <div class="event">
+    <div class="label">
+      <i style="color:white;  " class="comments outline icon"></i>
+    </div>
+    <div class="content">
+      <div class="summary">
+        <a class="user">
+          <%= user.email %>
+        </a>
+      </div>
+        <p><i style="display:inline-block;" class="inverted right arrow icon"></i>
+        &nbsp;&nbsp;<%= message.body %>
+        <br><%= message.created_at %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
+</div>
