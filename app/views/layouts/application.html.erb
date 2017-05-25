@@ -53,9 +53,10 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <% if user_signed_in? %>
             <ul class="nav navbar-nav header">
-
+            <li><%= link_to "FAQ", "/pages/info" %></li>
             <li><%= link_to "Find Learning Partners", "/profiles/index" %></li>
             <li><%= link_to "Inbox", "/conversations" %></li>
+
           </ul>
             <ul class="nav navbar-nav header navbar-right">
             <li><%= link_to "Profile", "/profiles"  %></li>
@@ -63,6 +64,9 @@
             <li><%= link_to "Log Out", "/users/sign_out"  %></li>
 
             <% else %>
+            <ul class="nav navbar-nav header">
+            <li><%= link_to "FAQ", "/pages/info" %></li>
+            </ul>
             <ul class="nav navbar-nav header navbar-right">
             <li><%= link_to "Log In", "/users/sign_in"  %></li>
             <li><%= link_to "Sign Up", "/users/sign_up"  %></li>
@@ -81,7 +85,7 @@
     </div>
 
   </div>
-    <div class="container-fluid">
+    <div class="container">
       <footer>
         <p style="text-align:right;">&copy; Language Exchange 2017</p>
       </footer>
